@@ -9,8 +9,8 @@ export const Card = ({ item }) => {
             <C.Card>
                 <img src={`https://github.com/${item.github}.png`} alt="Foto de perfil do Github" />
                 <hr></hr>
-                <h2>{item.nome}</h2>
-                <span>{item.cargo}</span>
+                <h2>{item.name}</h2>
+                <span>{item.position}</span>
                 <C.Icon>
                     <a href={`https://github.com/${item.github}`} target='_blank' rel='noreferrer'>
                         <img src={github} alt="Github logo" />

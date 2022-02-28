@@ -1,29 +1,27 @@
 import * as C from './styles';
 
 import { useState } from 'react';
-import { dev } from '../../data/dev';
 
-export const PopUpScreen = ({ visibility, onHidden }) => {
+export const PopUpScreen = ({ visibility, onHidden, newAdd }) => {
 
     const [nameField, setNameField] = useState('');
     const [positionField, setPositionField] = useState('');
     const [githubField, setGithubField] = useState('');
     const [linkedinField, setLinkedinField] = useState('');
 
-    const handleAdd = () => {
-        let newDev = [...dev]
+    const newDev = {
+        name: nameField,
+        position: positionField,
+        github: githubField,
+        linkedin: linkedinField,
+    };
 
-        newDev.push({
-            id: dev.length + 1,
-            name: nameField,
-            position: positionField,
-            github: githubField,
-            linkedin: linkedinField,
-        });
-
-        console.log(dev)
+    const clearField = () => {
+        setNameField('')
+        setPositionField('')
+        setGithubField('')
+        setLinkedinField('')
     }
-
     
     return (
         <C.Container visibility={visibility}>
@@ -55,7 +53,7 @@ export const PopUpScreen = ({ visibility, onHidden }) => {
                 </C.Input>
                 <C.BtnArea>
                     <C.Btn color='color' onClick={onHidden} >Cancelar</C.Btn>
-                    <C.Btn onClick={handleAdd && onHidden}>Adicionar</C.Btn>
+                    <C.Btn onClick={() => newAdd(newDev, onHidden(), clearField())}>Adicionar</C.Btn>
                 </C.BtnArea>
             </C.Form>
         </C.Container>
