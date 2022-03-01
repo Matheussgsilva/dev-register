@@ -9,19 +9,20 @@ export const PopUpScreen = ({ visibility, onHidden, newAdd }) => {
     const [githubField, setGithubField] = useState('');
     const [linkedinField, setLinkedinField] = useState('');
 
+
     const newDev = {
         name: nameField,
         position: positionField,
         github: githubField,
         linkedin: linkedinField,
     };
-
+    
     const clearField = () => {
         setNameField('')
         setPositionField('')
         setGithubField('')
         setLinkedinField('')
-    }
+    };
     
     return (
         <C.Container visibility={visibility}>

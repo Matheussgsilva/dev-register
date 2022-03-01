@@ -8,18 +8,18 @@ import { PopUpScreen } from '../../components/PopUpScreen';
 import { dev } from '../../data/dev';
 
 export const Page2 = () => {
-    const [popUp, setPopUp] = useState('hidden');
-    const [newDev, setNewDev] = useState(dev);
+    const [visible, setVisible] = useState('hidden');
+    const [newDev, setNewDev] = useState({});
     const [listDev, setListDev] = useState(dev);
 
     const handleClickAdd = () => {
-        setPopUp('visible');
+        setVisible('visible');
     }
 
     const handleHidden = () => {
-        setPopUp('hidden');
+        setVisible('hidden');
 
-        let newList = [...dev];
+        let newList = [...listDev];
         newList.push({
             id: dev.length + 1,
             name: newDev.name,
@@ -35,7 +35,7 @@ export const Page2 = () => {
     return (
         <C.Container>
             <PopUpScreen 
-                visibility={popUp} onHidden={handleHidden} 
+                visibility={visible} onHidden={handleHidden} 
                 newAdd={newDev => setNewDev(newDev)} 
             />
             <Header />
