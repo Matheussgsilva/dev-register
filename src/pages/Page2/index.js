@@ -1,5 +1,5 @@
 import * as C from './styles';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
@@ -18,7 +18,9 @@ export const Page2 = () => {
 
     const handleHidden = () => {
         setVisible('hidden');
+    }
 
+    useEffect (() => {
         let newList = [...listDev];
         newList.push({
             id: dev.length + 1,
@@ -28,7 +30,7 @@ export const Page2 = () => {
             linkedin: newDev.linkedin,
         });
         setListDev(newList);
-    }
+    }, [newDev])
 
     console.log(newDev)
 
