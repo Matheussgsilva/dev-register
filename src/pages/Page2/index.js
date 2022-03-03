@@ -8,16 +8,16 @@ import { PopUpScreen } from '../../components/PopUpScreen';
 import { dev } from '../../data/dev';
 
 export const Page2 = () => {
-    const [visible, setVisible] = useState('hidden');
+    const [visible, setVisible] = useState(false);
     const [newDev, setNewDev] = useState({});
     const [listDev, setListDev] = useState(dev);
 
     const handleClickAdd = () => {
-        setVisible('visible');
+        setVisible(true);
     }
 
     const handleHidden = () => {
-        setVisible('hidden');
+        setVisible(false);
     }
 
     useEffect (() => {
@@ -36,10 +36,11 @@ export const Page2 = () => {
 
     return (
         <C.Container>
-            <PopUpScreen 
-                visibility={visible} onHidden={handleHidden} 
+            {visible &&
+             <PopUpScreen 
+                onHidden={handleHidden} 
                 newAdd={newDev => setNewDev(newDev)} 
-            />
+            />}
             <Header />
             <C.Btn >
                 <button onClick={handleClickAdd} >Adicionar desenvolvedor</button>

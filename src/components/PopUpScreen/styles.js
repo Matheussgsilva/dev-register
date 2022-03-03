@@ -4,8 +4,7 @@ export const Container = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: rgba( 29, 29, 29, .6);
-    margin-bottom: -100vh;
-    visibility: ${props => props.visibility};
+    margin-bottom: -100vh;   
     position: relative;
     display: flex;
     justify-content: center;
