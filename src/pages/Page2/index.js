@@ -9,7 +9,7 @@ import { dev } from '../../data/dev';
 
 export const Page2 = () => {
     const [visible, setVisible] = useState(false);
-    const [newDev, setNewDev] = useState({});
+    const [newDev, setNewDev] = useState(null);
     const [listDev, setListDev] = useState(dev);
 
     const handleClickAdd = () => {
@@ -21,16 +21,20 @@ export const Page2 = () => {
     }
 
     useEffect (() => {
-        let newList = [...listDev];
-        newList.push({
-            id: dev.length + 1,
-            name: newDev.name,
-            position: newDev.position,
-            github: newDev.github,
-            linkedin: newDev.linkedin,
-        });
-        setListDev(newList);
-    }, [newDev])
+
+        const setNewDev = () => {
+          let newList = [...listDev];
+          newList.push({
+              id: dev.length + 1,
+              name: newDev.name,
+              position: newDev.position,
+              github: newDev.github,
+              linkedin: newDev.linkedin,
+          });
+          setListDev(newList);
+        }
+         newDev &&  setNewDev()
+      }, [newDev])
 
     console.log(newDev)
 
