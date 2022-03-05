@@ -3,7 +3,8 @@ import * as C from './styles';
 import github from '../../images/github.png';
 import linkedin from '../../images/linkedin-logo.png';
 
-export const Card = ({ item }) => {
+export const Card = ({ item, onVisible }) => {
+
     return (
         <C.Container>
             <C.Card>
@@ -23,7 +24,9 @@ export const Card = ({ item }) => {
             </C.Card>
             <C.BtnArea>
                 <C.Btn color='warning'>Editar</C.Btn>
-                <C.Btn>Deletar</C.Btn>
+                <C.Btn 
+                    onClick={onVisible} 
+                >Deletar</C.Btn>
             </C.BtnArea>
         </C.Container>
     );
