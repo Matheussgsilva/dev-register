@@ -79,7 +79,3 @@ export const Btn = styled.div`
         opacity: 0.8;
     }
 `;
-
-export const BtnPlus = styled(Btn)`
-    background-color: #27AE60;
-`;

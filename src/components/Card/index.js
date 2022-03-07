@@ -4,7 +4,7 @@ import github from '../../images/github.png';
 import linkedin from '../../images/linkedin-logo.png';
 
 export const Card = ({ item, onVisible }) => {
-
+    
     return (
         <C.Container>
             <C.Card>
@@ -19,7 +19,6 @@ export const Card = ({ item, onVisible }) => {
                     <a href={`https://linkedin.com/in/${item.linkedin}`} target='_blank' rel='noreferrer'>
                     <img src={linkedin} alt="Linkedin logo" />
                     </a>
-                    <C.BtnPlus>Ver mais</C.BtnPlus>
                 </C.Icon>
             </C.Card>
             <C.BtnArea>
