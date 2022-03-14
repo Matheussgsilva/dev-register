@@ -3,7 +3,7 @@ import * as C from './styles';
 import github from '../../images/github.png';
 import linkedin from '../../images/linkedin-logo.png';
 
-export const Card = ({ item, onVisible }) => {
+export const Card = ({ item, onVisible, handleUser }) => {
     
     return (
         <C.Container>
@@ -24,7 +24,8 @@ export const Card = ({ item, onVisible }) => {
             <C.BtnArea>
                 <C.Btn color='warning'>Editar</C.Btn>
                 <C.Btn 
-                    onClick={onVisible} 
+                    //onClick={onVisible}
+                    onClick={() => handleUser(item.name, onVisible())}
                 >Deletar</C.Btn>
             </C.BtnArea>
         </C.Container>

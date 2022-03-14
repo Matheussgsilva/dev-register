@@ -13,6 +13,7 @@ export const Page2 = () => {
     const [visibleDelete, setVisibleDelete] = useState(false)
     const [newDev, setNewDev] = useState(null);
     const [listDev, setListDev] = useState(dev);
+    const [user, setUser] = useState('')
 
     const handleClickAdd = () => {
         setVisible(true);
@@ -46,6 +47,8 @@ export const Page2 = () => {
          newDev &&  setNewDev()
       }, [newDev])
 
+      console.log(user)
+
     return (
         <C.Container>
             {visible &&
@@ -58,6 +61,7 @@ export const Page2 = () => {
                 <DeleteScreen 
                     onHidden={handleHiddenDelete}
                     devList={listDev}
+                    user={user}
                 />
             }
             <Header />
@@ -69,7 +73,8 @@ export const Page2 = () => {
                 <Card  
                     key={index} 
                     item={item} 
-                    onVisible={handleVisibleDelete} 
+                    onVisible={handleVisibleDelete}
+                    handleUser={user => setUser(user)}
                 />))}
             </C.DevArea>
         </C.Container>
