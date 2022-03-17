@@ -47,8 +47,6 @@ export const Page2 = () => {
          newDev &&  setNewDev()
       }, [newDev])
 
-      console.log(user)
-
     return (
         <C.Container>
             {visible &&
@@ -62,6 +60,7 @@ export const Page2 = () => {
                     onHidden={handleHiddenDelete}
                     devList={listDev}
                     user={user}
+                    deleteUser={deletedUser => setListDev(deletedUser)}
                 />
             }
             <Header />
