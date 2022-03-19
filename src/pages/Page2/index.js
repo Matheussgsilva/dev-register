@@ -10,13 +10,16 @@ import { dev } from '../../data/dev';
 
 export const Page2 = () => {
     const [visible, setVisible] = useState(false);
-    const [visibleDelete, setVisibleDelete] = useState(false)
+    const [visibleDelete, setVisibleDelete] = useState(false);
     const [newDev, setNewDev] = useState(null);
     const [listDev, setListDev] = useState(dev);
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState([]);
+    const [popUpText, setPopUpText] = useState('');
 
     const handleClickAdd = () => {
         setVisible(true);
+        setPopUpText('Adicionar');
+        setUser([]);
     }
 
     const handleHidden = () => {
@@ -30,6 +33,13 @@ export const Page2 = () => {
     const handleVisibleDelete = () => {
         setVisibleDelete(true);
     }
+
+    const handleEdit = () => {
+        setVisible(true);
+        setPopUpText('Editar');
+    }
+
+    console.log(user)
 
     useEffect (() => {
 
@@ -51,15 +61,17 @@ export const Page2 = () => {
         <C.Container>
             {visible &&
                 <PopUpScreen 
+                    text={popUpText}
                     onHidden={handleHidden} 
-                    newAdd={newDev => setNewDev(newDev)} 
+                    newAdd={newDev => setNewDev(newDev)}
+                    data={user}
                 />
             }
             {visibleDelete &&
                 <DeleteScreen 
                     onHidden={handleHiddenDelete}
                     devList={listDev}
-                    user={user}
+                    user={user.name}
                     deleteUser={deletedUser => setListDev(deletedUser)}
                 />
             }
@@ -68,13 +80,18 @@ export const Page2 = () => {
                 <button onClick={handleClickAdd} >Adicionar desenvolvedor</button>
             </C.Btn>
             <C.DevArea>
-            {listDev.map(( item, index ) => (
-                <Card  
-                    key={index} 
-                    item={item} 
-                    onVisible={handleVisibleDelete}
-                    handleUser={user => setUser(user)}
-                />))}
+                {listDev.map(( item, index ) => (
+                    <Card  
+                        key={index} 
+                        item={item} 
+                        onVisible={handleVisibleDelete}
+                        onEdit={handleEdit}
+                        handleUser={user => setUser(user)}
+                    />
+                ))}
+                {listDev === 0 &&
+                    <h1>Não há Devs cadastrados</h1>
+                }
             </C.DevArea>
         </C.Container>
     );

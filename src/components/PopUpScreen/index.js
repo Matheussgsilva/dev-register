@@ -2,12 +2,12 @@ import * as C from './styles';
 
 import { useState } from 'react';
 
-export const PopUpScreen = ({ visibility, onHidden, newAdd }) => {
+export const PopUpScreen = ({ visibility, onHidden, newAdd, text, data }) => {
 
-    const [nameField, setNameField] = useState('');
-    const [positionField, setPositionField] = useState('');
-    const [githubField, setGithubField] = useState('');
-    const [linkedinField, setLinkedinField] = useState('');
+    const [nameField, setNameField] = useState(data.name);
+    const [positionField, setPositionField] = useState(data.position);
+    const [githubField, setGithubField] = useState(data.github);
+    const [linkedinField, setLinkedinField] = useState(data.linkedin);
     
     const newDev = {
         name: nameField,
@@ -26,7 +26,7 @@ export const PopUpScreen = ({ visibility, onHidden, newAdd }) => {
     return (
         <C.Container visibility={visibility}>
             <C.Form>
-                <h3>Adicionar Desenvolvedor</h3>
+                <h3>{text} Desenvolvedor</h3>
                 <C.Label>Nome:</C.Label>
                 <C.Input 
                     placeholder='Adicione o seu nome'
@@ -53,7 +53,7 @@ export const PopUpScreen = ({ visibility, onHidden, newAdd }) => {
                 </C.Input>
                 <C.BtnArea>
                     <C.Btn color='color' onClick={onHidden} >Cancelar</C.Btn>
-                    <C.Btn onClick={() => newAdd(newDev, onHidden(), clearField())}>Adicionar</C.Btn>
+                    <C.Btn onClick={() => newAdd(newDev, onHidden(), clearField())}>{text}</C.Btn>
                 </C.BtnArea>
             </C.Form>
         </C.Container>

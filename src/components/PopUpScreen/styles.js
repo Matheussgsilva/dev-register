@@ -26,6 +26,7 @@ export const Form = styled.div`
         font-size: 30px;
         margin: 0;
         margin-bottom: 20px;
+        text-align: center;
     }
 `;
 

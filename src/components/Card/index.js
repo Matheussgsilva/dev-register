@@ -3,7 +3,7 @@ import * as C from './styles';
 import github from '../../images/github.png';
 import linkedin from '../../images/linkedin-logo.png';
 
-export const Card = ({ item, onVisible, handleUser }) => {
+export const Card = ({ item, onVisible, handleUser, onEdit }) => {
     
     return (
         <C.Container>
@@ -22,10 +22,9 @@ export const Card = ({ item, onVisible, handleUser }) => {
                 </C.Icon>
             </C.Card>
             <C.BtnArea>
-                <C.Btn color='warning'>Editar</C.Btn>
-                <C.Btn 
-                    //onClick={onVisible}
-                    onClick={() => handleUser(item.name, onVisible())}
+                <C.Btn color='warning' onClick={() => handleUser(item, onEdit())} >Editar</C.Btn>
+                <C.Btn
+                    onClick={() => handleUser(item, onVisible())}
                 >Deletar</C.Btn>
             </C.BtnArea>
         </C.Container>
