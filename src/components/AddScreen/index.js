@@ -2,12 +2,12 @@ import * as C from './styles';
 
 import { useState } from 'react';
 
-export const AddScreen = ({ visibility, onHidden, newAdd, text, data }) => {
+export const AddScreen = ({ visibility, onHidden, newAdd, text }) => {
 
-    const [nameField, setNameField] = useState(data.name);
-    const [positionField, setPositionField] = useState(data.position);
-    const [githubField, setGithubField] = useState(data.github);
-    const [linkedinField, setLinkedinField] = useState(data.linkedin);
+    const [nameField, setNameField] = useState('');
+    const [positionField, setPositionField] = useState('');
+    const [githubField, setGithubField] = useState('');
+    const [linkedinField, setLinkedinField] = useState('');
     
     const newDev = {
         name: nameField,
@@ -22,8 +22,6 @@ export const AddScreen = ({ visibility, onHidden, newAdd, text, data }) => {
         setGithubField('')
         setLinkedinField('')
     };
-
-    console.log(data.length())
     
     return (
         <C.Container visibility={visibility}>

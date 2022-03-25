@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react'
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
 import { AddScreen } from '../../components/AddScreen';
+import { EditScreen } from '../../components/EditScreen'
 import { DeleteScreen } from '../../components/DeleteScreen';
 
 import { dev } from '../../data/dev';
 
 export const Page2 = () => {
-    const [visible, setVisible] = useState(false);
+    const [addVisible, setAddVisible] = useState(false);
+    const [editVisible, setEditVisible] = useState(false);
     const [visibleDelete, setVisibleDelete] = useState(false);
     const [newDev, setNewDev] = useState(null);
     const [listDev, setListDev] = useState(dev);
@@ -17,13 +19,12 @@ export const Page2 = () => {
     const [popUpText, setPopUpText] = useState('');
 
     const handleClickAdd = () => {
-        setVisible(true);
+        setAddVisible(true);
         setPopUpText('Adicionar');
-        setUser([]);
     }
 
     const handleHidden = () => {
-        setVisible(false);
+        setAddVisible(false);
     }
 
     const handleHiddenDelete = () => {
@@ -35,11 +36,9 @@ export const Page2 = () => {
     }
 
     const handleEdit = () => {
-        setVisible(true);
+        setEditVisible(true);
         setPopUpText('Editar');
     }
-
-    console.log(user)
 
     useEffect (() => {
 
@@ -59,8 +58,15 @@ export const Page2 = () => {
 
     return (
         <C.Container>
-            {visible &&
+            {addVisible &&
                 <AddScreen 
+                    text={popUpText}
+                    onHidden={handleHidden} 
+                    newAdd={newDev => setNewDev(newDev)}
+                />
+            }
+            {editVisible &&
+                <EditScreen 
                     text={popUpText}
                     onHidden={handleHidden} 
                     newAdd={newDev => setNewDev(newDev)}
