@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
-import { PopUpScreen } from '../../components/PopUpScreen';
+import { AddScreen } from '../../components/AddScreen';
 import { DeleteScreen } from '../../components/DeleteScreen';
 
 import { dev } from '../../data/dev';
@@ -60,7 +60,7 @@ export const Page2 = () => {
     return (
         <C.Container>
             {visible &&
-                <PopUpScreen 
+                <AddScreen 
                     text={popUpText}
                     onHidden={handleHidden} 
                     newAdd={newDev => setNewDev(newDev)}

@@ -2,7 +2,7 @@ import * as C from './styles';
 
 import { useState } from 'react';
 
-export const PopUpScreen = ({ visibility, onHidden, newAdd, text, data }) => {
+export const AddScreen = ({ visibility, onHidden, newAdd, text, data }) => {
 
     const [nameField, setNameField] = useState(data.name);
     const [positionField, setPositionField] = useState(data.position);
@@ -22,6 +22,8 @@ export const PopUpScreen = ({ visibility, onHidden, newAdd, text, data }) => {
         setGithubField('')
         setLinkedinField('')
     };
+
+    console.log(data.length())
     
     return (
         <C.Container visibility={visibility}>
