@@ -2,7 +2,7 @@ import * as C from './styles';
 
 import { useState } from 'react';
 
-export const EditScreen = ({ visibility, onHidden, newAdd, text, data }) => {
+export const EditScreen = ({  onHidden, newAdd, text, data }) => {
 
     const [nameField, setNameField] = useState(data.name);
     const [positionField, setPositionField] = useState(data.position);
@@ -14,19 +14,10 @@ export const EditScreen = ({ visibility, onHidden, newAdd, text, data }) => {
         position: positionField,
         github: githubField,
         linkedin: linkedinField,
-    };    
-    
-    const clearField = () => {
-        setNameField('')
-        setPositionField('')
-        setGithubField('')
-        setLinkedinField('')
     };
-
-    console.log(data.length())
-    
+       
     return (
-        <C.Container visibility={visibility}>
+        <C.Container>
             <C.Form>
                 <h3>{text} Desenvolvedor</h3>
                 <C.Label>Nome:</C.Label>
@@ -55,7 +46,7 @@ export const EditScreen = ({ visibility, onHidden, newAdd, text, data }) => {
                 </C.Input>
                 <C.BtnArea>
                     <C.Btn color='color' onClick={onHidden} >Cancelar</C.Btn>
-                    <C.Btn onClick={() => newAdd(newDev, onHidden(), clearField())}>{text}</C.Btn>
+                    <C.Btn onClick={() => newAdd(newDev, onHidden())}>{text}</C.Btn>
                 </C.BtnArea>
             </C.Form>
         </C.Container>

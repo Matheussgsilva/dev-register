@@ -46,6 +46,7 @@ export const Input = styled.input`
     border: none;
     padding: 5px 10px;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .4);
+    outline: 0;
 `;
 
 export const BtnArea = styled.div`

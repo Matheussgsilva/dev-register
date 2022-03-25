@@ -40,6 +40,10 @@ export const Page2 = () => {
         setPopUpText('Editar');
     }
 
+    const handleEditHidden = () => {
+        setEditVisible(false);
+    }
+
     useEffect (() => {
 
         const setNewDev = () => {
@@ -68,7 +72,7 @@ export const Page2 = () => {
             {editVisible &&
                 <EditScreen 
                     text={popUpText}
-                    onHidden={handleHidden} 
+                    onHidden={handleEditHidden} 
                     newAdd={newDev => setNewDev(newDev)}
                     data={user}
                 />

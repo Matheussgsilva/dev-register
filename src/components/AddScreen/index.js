@@ -31,7 +31,8 @@ export const AddScreen = ({ visibility, onHidden, newAdd, text }) => {
                 <C.Input 
                     placeholder='Adicione o seu nome'
                     value={nameField} 
-                    onChange={e => setNameField(e.target.value)}>
+                    onChange={e => setNameField(e.target.value)}
+                    autoFocus>
                 </C.Input>
                 <C.Label>Cargo:</C.Label>
                 <C.Input 
