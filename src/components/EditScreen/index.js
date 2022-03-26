@@ -2,19 +2,25 @@ import * as C from './styles';
 
 import { useState } from 'react';
 
-export const EditScreen = ({  onHidden, newAdd, text, data }) => {
+export const EditScreen = ({ onHidden, newAdd, text, data, list }) => {
 
     const [nameField, setNameField] = useState(data.name);
     const [positionField, setPositionField] = useState(data.position);
     const [githubField, setGithubField] = useState(data.github);
     const [linkedinField, setLinkedinField] = useState(data.linkedin);
     
-    const newDev = {
+    const newList = {
+        ...list
+    };
+
+    newList[list.indexOf(data)] = {
         name: nameField,
         position: positionField,
         github: githubField,
         linkedin: linkedinField,
-    };
+    }
+
+    console.log(newList)
        
     return (
         <C.Container>
@@ -46,7 +52,7 @@ export const EditScreen = ({  onHidden, newAdd, text, data }) => {
                 </C.Input>
                 <C.BtnArea>
                     <C.Btn color='color' onClick={onHidden} >Cancelar</C.Btn>
-                    <C.Btn onClick={() => newAdd(newDev, onHidden())}>{text}</C.Btn>
+                    <C.Btn onClick={() => newAdd(newList, onHidden())}>{text}</C.Btn>
                 </C.BtnArea>
             </C.Form>
         </C.Container>
