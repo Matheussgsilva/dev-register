@@ -73,7 +73,7 @@ export const Page2 = () => {
                 <EditScreen 
                     text={popUpText}
                     onHidden={handleEditHidden} 
-                    newAdd={editedList => editedList}
+                    newAdd={editedList => setListDev(editedList)}
                     data={user}
                     list={listDev}
                 />

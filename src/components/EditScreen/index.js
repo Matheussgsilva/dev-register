@@ -9,18 +9,15 @@ export const EditScreen = ({ onHidden, newAdd, text, data, list }) => {
     const [githubField, setGithubField] = useState(data.github);
     const [linkedinField, setLinkedinField] = useState(data.linkedin);
     
-    const newList = {
-        ...list
-    };
+    const newList = [...list];
 
     newList[list.indexOf(data)] = {
+        id: data.id,
         name: nameField,
         position: positionField,
         github: githubField,
         linkedin: linkedinField,
-    }
-
-    console.log(newList)
+    };
        
     return (
         <C.Container>
