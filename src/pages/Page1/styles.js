@@ -8,7 +8,8 @@ export const Container = styled.div`
     background-size: cover auto;
     background-position: center center;
     color: #D2D2D2;
-    height: 100vh
+    height: 100vh;
+    width: 100vw;
 `;
 
 export const Main = styled.div`

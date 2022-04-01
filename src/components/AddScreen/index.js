@@ -8,7 +8,7 @@ export const AddScreen = ({ visibility, onHidden, newAdd, text }) => {
     const [positionField, setPositionField] = useState('');
     const [githubField, setGithubField] = useState('');
     const [linkedinField, setLinkedinField] = useState('');
-    
+
     const newDev = {
         name: nameField,
         position: positionField,
