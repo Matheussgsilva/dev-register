@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
 import { AddScreen } from '../../components/AddScreen';
-import { EditScreen } from '../../components/EditScreen'
+import { EditScreen } from '../../components/EditScreen';
+import { ResearchedScreen } from '../../components/ResearchedScreen';
 import { DeleteScreen } from '../../components/DeleteScreen';
 
 import { dev } from '../../data/dev';
@@ -13,36 +14,48 @@ export const Page2 = () => {
     const [addVisible, setAddVisible] = useState(false);
     const [editVisible, setEditVisible] = useState(false);
     const [visibleDelete, setVisibleDelete] = useState(false);
+    const [researchedVisible, setResearchedVisible] = useState(false);
     const [newDev, setNewDev] = useState(null);
     const [listDev, setListDev] = useState(dev);
     const [user, setUser] = useState([]);
     const [popUpText, setPopUpText] = useState('');
+    const [researchedDev, setResearchedDev] = useState([]);
+
+    const handleSearch = (name) => {
+        let dev = listDev.filter(item => (item.name.includes(name)));
+        setResearchedDev(dev);
+        setResearchedVisible(true);
+    };
 
     const handleClickAdd = () => {
         setAddVisible(true);
         setPopUpText('Adicionar');
-    }
+    };
 
     const handleHidden = () => {
         setAddVisible(false);
-    }
+    };
 
     const handleHiddenDelete = () => {
         setVisibleDelete(false);
-    }
+    };
 
     const handleVisibleDelete = () => {
         setVisibleDelete(true);
-    }
+    };
 
     const handleEdit = () => {
         setEditVisible(true);
         setPopUpText('Editar');
-    }
+    };
 
     const handleEditHidden = () => {
         setEditVisible(false);
-    }
+    };
+
+    const handleResearchedHidden = () => {
+        setResearchedVisible(false);
+    };
 
     useEffect (() => {
 
@@ -58,7 +71,7 @@ export const Page2 = () => {
           setListDev(newList);
         }
          newDev &&  setNewDev()
-      }, [newDev])
+      }, [newDev]);
 
     return (
         <C.Container>
@@ -78,6 +91,12 @@ export const Page2 = () => {
                     list={listDev}
                 />
             }
+            {researchedVisible &&
+                <ResearchedScreen
+                    onHidden={handleResearchedHidden}
+                    data={researchedDev}
+                />
+            }
             {visibleDelete &&
                 <DeleteScreen 
                     onHidden={handleHiddenDelete}
@@ -86,7 +105,7 @@ export const Page2 = () => {
                     deleteUser={deletedUser => setListDev(deletedUser)}
                 />
             }
-            <Header />
+            <Header onEnter={handleSearch} />
             <C.Btn >
                 <button onClick={handleClickAdd} >Adicionar desenvolvedor</button>
             </C.Btn>
