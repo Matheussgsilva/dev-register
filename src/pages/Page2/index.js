@@ -1,11 +1,11 @@
 import * as C from './styles';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
 import { AddScreen } from '../../components/AddScreen';
 import { EditScreen } from '../../components/EditScreen';
-import { ResearchedScreen } from '../../components/ResearchedScreen';
 import { DeleteScreen } from '../../components/DeleteScreen';
 
 import { dev } from '../../data/dev';
@@ -14,17 +14,13 @@ export const Page2 = () => {
     const [addVisible, setAddVisible] = useState(false);
     const [editVisible, setEditVisible] = useState(false);
     const [visibleDelete, setVisibleDelete] = useState(false);
-    const [researchedVisible, setResearchedVisible] = useState(false);
     const [newDev, setNewDev] = useState(null);
     const [listDev, setListDev] = useState(dev);
     const [user, setUser] = useState([]);
     const [popUpText, setPopUpText] = useState('');
-    const [researchedDev, setResearchedDev] = useState([]);
 
     const handleSearch = (name) => {
-        let dev = listDev.filter(item => (item.name.includes(name)));
-        setResearchedDev(dev);
-        setResearchedVisible(true);
+        //let dev = listDev.filter(item => (item.name.includes(name)));
     };
 
     const handleClickAdd = () => {
@@ -51,10 +47,6 @@ export const Page2 = () => {
 
     const handleEditHidden = () => {
         setEditVisible(false);
-    };
-
-    const handleResearchedHidden = () => {
-        setResearchedVisible(false);
     };
 
     useEffect (() => {
@@ -89,12 +81,6 @@ export const Page2 = () => {
                     newAdd={editedList => setListDev(editedList)}
                     data={user}
                     list={listDev}
-                />
-            }
-            {researchedVisible &&
-                <ResearchedScreen
-                    onHidden={handleResearchedHidden}
-                    data={researchedDev}
                 />
             }
             {visibleDelete &&
