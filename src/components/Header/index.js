@@ -6,26 +6,24 @@ import linkedinIcon from '../../images/linkedin.png';
 import facebokIcon from '../../images/facebook.png';
 import discordIcon from '../../images/discord.png';
 import logo from '../../images/Logo.png';
+import searchIcon from '../../images/loupe.png';
 
 export const Header = ({ display }) => {
 
     const [name, setName] = useState('');
 
-    const handleKeyUp = (e) => {
-        if(e.code === 'Enter' && name !== '') {
-            //onEnter(name);
-            <Link to={`/search/${name}`}></Link>
-        }
-    };
-
-    console.log('Nome pesquisado: ', name)
-
     return (
         <C.Header>
                 <C.HeaderIcon>
-                    <img src={linkedinIcon} alt='Logo Linkedin' />
-                    <img src={facebokIcon} alt='Logo Facebook' />
-                    <img src={discordIcon} alt='Logo Discord' />
+                    <a href='https://linkedin.com/in/matheus-sgsilva' target='_blank'>
+                        <img src={linkedinIcon} alt='Logo Linkedin' />
+                    </a>
+                    <a href='https://github.com/matheussgsilva' target='_blank'>
+                        <img src={facebokIcon} alt='Logo Facebook' />
+                    </a>
+                    <a href='https://matheussilva.dev.br' target='_blank'>
+                        <img src={discordIcon} alt='Logo Discord' />
+                    </a>
                 </C.HeaderIcon>
                 <C.HeaderLogo>
                     <img src={logo} alt='Logo Balle Dev' />
@@ -36,8 +34,14 @@ export const Header = ({ display }) => {
                         placeholder='Buscar'
                         value={name}
                         onChange={e => setName(e.target.value)}
-                        onKeyUp={handleKeyUp}
                         />
+                    <C.HeaderSearchImage>
+                        {name !== '' &&    
+                            <Link to={`/search/${name}`}>
+                                <img src={searchIcon} alt='Lupa' />
+                            </Link>
+                        }
+                    </C.HeaderSearchImage>
                 </C.HeaderSearch>             
             </C.Header>
     );
