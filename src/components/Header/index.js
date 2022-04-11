@@ -15,13 +15,13 @@ export const Header = ({ display }) => {
     return (
         <C.Header>
                 <C.HeaderIcon>
-                    <a href='https://linkedin.com/in/matheus-sgsilva' target='_blank'>
+                    <a href='https://linkedin.com/in/matheus-sgsilva' target='_blank' rel='noreferrer'>
                         <img src={linkedinIcon} alt='Logo Linkedin' />
                     </a>
-                    <a href='https://github.com/matheussgsilva' target='_blank'>
+                    <a href='https://github.com/matheussgsilva' target='_blank' rel='noreferrer'>
                         <img src={facebokIcon} alt='Logo Facebook' />
                     </a>
-                    <a href='https://matheussilva.dev.br' target='_blank'>
+                    <a href='https://matheussilva.dev.br' target='_blank' rel='noreferrer'>
                         <img src={discordIcon} alt='Logo Discord' />
                     </a>
                 </C.HeaderIcon>
