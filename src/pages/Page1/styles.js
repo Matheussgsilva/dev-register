@@ -5,7 +5,7 @@ import bg from '../../images/bg.png';
 export const Container = styled.div`
     background-color: #1D1D1D;
     background-image: url(${bg});
-    background-size: cover auto;
+    background-size: cover cover;
     background-position: center center;
     color: #D2D2D2;
     height: 100vh;
