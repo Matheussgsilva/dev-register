@@ -18,6 +18,10 @@ export const Page2 = () => {
     const [listDev, setListDev] = useState(dev);
     const [user, setUser] = useState([]);
     const [popUpText, setPopUpText] = useState('');
+    const [showDev, setShowDev] = useState('full');
+    const [devSearch, setDevSearch] = useState('Matheus');
+
+    let devFiltered = listDev.filter(item => (item.name.includes(devSearch)));
 
     const handleSearch = (name) => {
         //let dev = listDev.filter(item => (item.name.includes(name)));
@@ -96,7 +100,19 @@ export const Page2 = () => {
                 <button onClick={handleClickAdd} >Adicionar desenvolvedor</button>
             </C.Btn>
             <C.DevArea>
-                {listDev.map(( item, index ) => (
+                {showDev === 'full' &&
+                listDev.map(( item, index ) => (
+                    <Card  
+                        key={index} 
+                        item={item} 
+                        onVisible={handleVisibleDelete}
+                        onEdit={handleEdit}
+                        handleUser={user => setUser(user)}
+                    />
+                ))}
+                {showDev === 'search' &&
+
+                devFiltered.map(( item, index ) => (
                     <Card  
                         key={index} 
                         item={item} 
