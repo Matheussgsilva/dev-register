@@ -14,7 +14,7 @@ export const Page1 = () => {
                 <C.LeftMain>
                     <h1>O maior banco de devs do Brasil</h1>
                     <p>Nao importa se front ou back end, fazer networking e muito importante. Faça parte da maior comunidade de desenvolvedores brasileiros.</p>
-                    <Link to='/step2'>
+                    <Link to='/devs'>
                         <button>Entre agora</button>
                     </Link>
                 </C.LeftMain>
