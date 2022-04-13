@@ -56,4 +56,5 @@ export const HeaderSearchImage = styled.div`
     height: 35px;
     width: 35px;
     border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
 `;
