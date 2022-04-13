@@ -1,6 +1,5 @@
 import * as C from './styles';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
@@ -19,13 +18,15 @@ export const Page2 = () => {
     const [user, setUser] = useState([]);
     const [popUpText, setPopUpText] = useState('');
     const [showDev, setShowDev] = useState('full');
-    const [devSearch, setDevSearch] = useState('Matheus');
+    const [devSearch, setDevSearch] = useState('');
 
-    let devFiltered = listDev.filter(item => (item.name.includes(devSearch)));
-
-    const handleSearch = (name) => {
-        //let dev = listDev.filter(item => (item.name.includes(name)));
+    const handleSearch = () => {
+        setShowDev('search');
     };
+
+    const handleShowAll = () => {
+        setShowDev('full');
+    }
 
     const handleClickAdd = () => {
         setAddVisible(true);
@@ -95,10 +96,18 @@ export const Page2 = () => {
                     deleteUser={deletedUser => setListDev(deletedUser)}
                 />
             }
-            <Header onEnter={handleSearch} />
-            <C.Btn >
-                <button onClick={handleClickAdd} >Adicionar desenvolvedor</button>
-            </C.Btn>
+            <Header 
+                onSearch={handleSearch} 
+                devName={devName => setDevSearch(devName)}
+            />
+            {showDev === 'full' &&
+                <C.Btn >
+                    <button onClick={handleClickAdd} >Adicionar desenvolvedor</button>
+                </C.Btn>}
+            {showDev === 'search' &&
+                <C.Btn >
+                    <button onClick={handleShowAll} >Exibir todos</button>
+                </C.Btn>}
             <C.DevArea>
                 {showDev === 'full' &&
                 listDev.map(( item, index ) => (
@@ -110,18 +119,20 @@ export const Page2 = () => {
                         handleUser={user => setUser(user)}
                     />
                 ))}
-                {showDev === 'search' &&
-
-                devFiltered.map(( item, index ) => (
+                {showDev === 'search' && 
+                    listDev.filter(item => (item.name.includes(devSearch))).map(( item, index ) => (
                     <Card  
                         key={index} 
                         item={item} 
                         onVisible={handleVisibleDelete}
                         onEdit={handleEdit}
                         handleUser={user => setUser(user)}
-                    />
+                    /> 
                 ))}
-                {listDev === 0 &&
+                {listDev.filter(item => (item.name.includes(devSearch))) === [''] &&
+                    <h1>Dev não encontrado</h1>
+                }  
+                {listDev.length === 0 &&
                     <h1>Não há Devs cadastrados</h1>
                 }
             </C.DevArea>
