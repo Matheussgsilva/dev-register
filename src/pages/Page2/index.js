@@ -70,6 +70,9 @@ export const Page2 = () => {
          newDev &&  setNewDev()
       }, [newDev]);
 
+      const filteredList = listDev.filter(item => (item.name.includes(devSearch)))
+      console.log("Lista Filtrada: ", filteredList)
+
     return (
         <C.Container>
             {addVisible &&
@@ -129,7 +132,7 @@ export const Page2 = () => {
                         handleUser={user => setUser(user)}
                     /> 
                 ))}
-                {listDev.filter(item => (item.name.includes(devSearch))) === [''] &&
+                {showDev === 'search' && listDev.filter(item => (item.name.includes(devSearch))).length === 0 &&
                     <h1>Dev não encontrado</h1>
                 }  
                 {listDev.length === 0 &&
