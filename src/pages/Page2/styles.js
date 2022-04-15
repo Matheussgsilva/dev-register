@@ -28,6 +28,30 @@ export const Btn = styled.div`
 `;
 
 export const DevArea = styled.div`
+    width: 90vw;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    justify-content: ${props => props.justify.length < 4 ? 'center' : 'none'};
+    overflow-x: auto;
+    scroll-behavier: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`;
+
+export const ArrowArea = styled.div`
     display: flex;
     justify-content: center;
+
+    button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:first-child img {
+            transform: rotate(180deg);
+        }
+    }
 `;

@@ -1,5 +1,5 @@
 import * as C from './styles';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { Header } from '../../components/Header';
 import { Card } from '../../components/Card';
@@ -8,6 +8,7 @@ import { EditScreen } from '../../components/EditScreen';
 import { DeleteScreen } from '../../components/DeleteScreen';
 
 import { dev } from '../../data/dev';
+import chevron from '../../images/chevron.png'
 
 export const Page2 = () => {
     const [addVisible, setAddVisible] = useState(false);
@@ -26,7 +27,7 @@ export const Page2 = () => {
 
     const handleShowAll = () => {
         setShowDev('full');
-    }
+    };
 
     const handleClickAdd = () => {
         setAddVisible(true);
@@ -70,8 +71,17 @@ export const Page2 = () => {
          newDev &&  setNewDev()
       }, [newDev]);
 
-      const filteredList = listDev.filter(item => (item.name.includes(devSearch)))
-      console.log("Lista Filtrada: ", filteredList)
+    const carousel = useRef(null);
+
+    const handleLeftClick = (e) => {
+        e.preventDefault();
+        carousel.current.scrollLeft -= carousel.current.offsetWidth;
+    };
+
+    const handleRigthClick = (e) => {
+        e.preventDefault();
+        carousel.current.scrollLeft += carousel.current.offsetWidth;
+    };
 
     return (
         <C.Container>
@@ -111,7 +121,7 @@ export const Page2 = () => {
                 <C.Btn >
                     <button onClick={handleShowAll} >Exibir todos</button>
                 </C.Btn>}
-            <C.DevArea>
+            <C.DevArea ref={carousel} justify={listDev}>
                 {showDev === 'full' &&
                 listDev.map(( item, index ) => (
                     <Card  
@@ -139,6 +149,12 @@ export const Page2 = () => {
                     <h1>Não há Devs cadastrados</h1>
                 }
             </C.DevArea>
+            {listDev.length > 3 &&
+                <C.ArrowArea>
+                    <button onClick={handleLeftClick}><img src={chevron} alt='left arrow' /></button>
+                    <button onClick={handleRigthClick}><img src={chevron} alt='rigth arrow' /></button>
+                </C.ArrowArea>
+            }
         </C.Container>
     );
 }
