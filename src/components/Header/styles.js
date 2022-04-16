@@ -4,6 +4,10 @@ export const Header = styled.div`
     display: flex;
     height: 45px;
     padding: 30px 120px 0px;
+
+    @media (max-width: 500px) {
+        padding: 10px 30px 0px;
+    }
 `;
 
 export const HeaderIcon = styled.div`

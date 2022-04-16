@@ -10,11 +10,19 @@ export const Container = styled.div`
     color: #D2D2D2;
     height: 100vh;
     width: 100vw;
+
+    @media (max-width: 500px) {
+        height: 100%;
+        max-width: 500px;
+    }
 `;
 
 export const Main = styled.div`
     display: flex;
     
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
 `;
 
 export const LeftMain = styled.div`
@@ -54,6 +62,11 @@ export const LeftMain = styled.div`
     button:hover {
         opacity: 0.7;
     }
+
+    @media (max-width: 500px) {
+        padding: 0px 20px;
+        margin-top: 90px;
+    }
 `;
 
 export const RightMain = styled.div`
@@ -61,9 +74,20 @@ export const RightMain = styled.div`
     padding-right: 120px;
 
     img {
-        widht: 550px;
-        height: 550px;
+        max-widht: 550px;
+        max-height: 550px;
         margin: 0;
         margin-top: -20px;
+    }
+
+    @media (max-width: 500px) {
+        padding-right: 20px;
+        height: 100vh;
+
+        img {
+            max-widht: 350px;
+            max-height: 350px;
+            margin: 0;
+            margin-top: 100px;
     }
 `;
