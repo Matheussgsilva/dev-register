@@ -9,6 +9,7 @@ export const Container = styled.div`
         width: 200px;
         height: 300px;
         margin-right: 30px;
+        margin-top: 20px;
     }
 `;
 
@@ -80,6 +81,7 @@ export const Icon = styled.div`
 
     @media (max-width: 500px) {
         margin-top: 20px;
+        margin-bottom: 30px
 
         img {
             width: 25px;
@@ -114,7 +116,7 @@ export const Btn = styled.div`
     }
 
     @media (max-width: 500px) {
-        width: 100px;
+        width: 80px;
         height: 35px;
         font-size: 15px;
     }
