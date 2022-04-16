@@ -6,6 +6,7 @@ export const Header = styled.div`
     padding: 30px 120px 0px;
 
     @media (max-width: 500px) {
+        height: 120px;
         padding: 10px 30px 0px;
         flex-direction: column;
         align-items: center;
