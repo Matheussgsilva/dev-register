@@ -25,6 +25,12 @@ export const Btn = styled.div`
             opacity: 0.8;
         }
     }
+
+    @media (max-width: 500px) {
+        text-align: center;
+        margin: 0px;
+        margin-top: 10px;
+    }
 `;
 
 export const DevArea = styled.div`
