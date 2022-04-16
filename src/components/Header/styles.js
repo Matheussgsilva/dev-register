@@ -28,6 +28,7 @@ export const HeaderIcon = styled.div`
     @media (max-width: 500px) {
         width: 200px;
         margin-bottom: 20px;
+        justify-content: center;
 
         img {
             width: 15px;
