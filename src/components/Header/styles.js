@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Header = styled.div`
     display: flex;
-    height: 45px;
+    height: 200px;
     padding: 30px 120px 0px;
 
     @media (max-width: 500px) {
         padding: 10px 30px 0px;
+        flex-direction: column;
+        align-items: center;
     }
 `;
 
@@ -22,6 +24,18 @@ export const HeaderIcon = styled.div`
         cursor: pointer;
         margin-right: 20px;
     }
+
+    @media (max-width: 500px) {
+        width: 200px;
+        margin-bottom: 20px;
+
+        img {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+    }
 `;
 
 export const HeaderLogo = styled.div`
@@ -33,6 +47,16 @@ export const HeaderLogo = styled.div`
     img {
         widht: 224px;
         height: 42px;
+    }
+
+    @media (max-width: 500px) {
+        padding-right: 100px;
+        margin-bottom: 20px;
+
+        img {
+            widht: 180px;
+            height: 40px;
+        }
     }
 `;
 
@@ -49,6 +73,14 @@ export const HeaderSearch = styled.div`
         outline: 0;
         border: none;
         padding: 0px 10px;
+    }
+
+    @media (max-width: 500px) {
+
+
+        input {
+            widht: 200px;
+        }
     }
 `;
 

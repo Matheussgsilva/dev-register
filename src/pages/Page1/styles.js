@@ -65,7 +65,22 @@ export const LeftMain = styled.div`
 
     @media (max-width: 500px) {
         padding: 0px 20px;
-        margin-top: 90px;
+        margin-top: 20px;
+
+        h1 {
+            font-size: 30px;
+        }
+    
+        p {
+            font-size: 16px;
+            line-height: 30px;
+        }
+    
+        button {
+            height: 48px;
+            width: 200px;
+            font-size: 16px;
+        }
     }
 `;
 
@@ -85,9 +100,8 @@ export const RightMain = styled.div`
         height: 100vh;
 
         img {
-            max-widht: 350px;
-            max-height: 350px;
-            margin: 0;
-            margin-top: 100px;
+            max-widht: 250px;
+            max-height: 250px;
+            margin-top: 80px;
     }
 `;
