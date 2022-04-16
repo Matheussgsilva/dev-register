@@ -32,8 +32,8 @@ export const HeaderIcon = styled.div`
         justify-content: center;
 
         img {
-            width: 15px;
-            height: 15px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
             margin-right: 15px;
         }
