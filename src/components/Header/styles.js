@@ -50,8 +50,8 @@ export const HeaderLogo = styled.div`
     }
 
     @media (max-width: 500px) {
-        padding-right: 100px;
-        margin-bottom: 20px;
+        padding: 0px;
+        margin-bottom: 10px;
 
         img {
             widht: 180px;
@@ -76,7 +76,7 @@ export const HeaderSearch = styled.div`
     }
 
     @media (max-width: 500px) {
-
+        margin: 0px;
 
         input {
             widht: 200px;
@@ -93,4 +93,9 @@ export const HeaderSearchImage = styled.div`
     width: 35px;
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
+
+    @media (max-width: 500px) {
+        height: 25px;
+        width: 25px;
+    }
 `;
