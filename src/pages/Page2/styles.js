@@ -45,6 +45,10 @@ export const DevArea = styled.div`
     &::-webkit-scrollbar {
         display: none;
     }
+
+    @media (max-width: 500px) {
+        margin-top: 20px;
+    }
 `;
 
 export const ArrowArea = styled.div`
