@@ -4,6 +4,12 @@ export const Container = styled.div`
     width: 300px;
     height: 400px;
     margin-right: 50px;
+
+    @media (max-width: 500px) {
+        width: 200px;
+        height: 300px;
+        margin-right: 30px;
+    }
 `;
 
 export const Card = styled.div`
@@ -38,6 +44,21 @@ export const Card = styled.div`
     spam {
         font-size: 15px;
     }
+
+    @media (max-width: 500px) {
+        width: 200px;
+        height: 230px;
+        padding-top: 20px;
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    }
 `;
 
 export const Icon = styled.div`
@@ -56,12 +77,25 @@ export const Icon = styled.div`
     button:hover {
         opacity: 0.8;
     }
+
+    @media (max-width: 500px) {
+        margin-top: 20px;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
 `;
 
 export const BtnArea = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+
+    @media (max-width: 500px) {
+        margin-top: 25px;
+    }
 `;
 
 export const Btn = styled.div`
@@ -77,5 +111,11 @@ export const Btn = styled.div`
 
     &:hover {
         opacity: 0.8;
+    }
+
+    @media (max-width: 500px) {
+        width: 100px;
+        height: 35px;
+        font-size: 15px;
     }
 `;
