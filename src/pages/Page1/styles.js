@@ -102,6 +102,6 @@ export const RightMain = styled.div`
         img {
             max-widht: 250px;
             max-height: 250px;
-            margin-top: 80px;
+            margin-top: 70px;
     }
 `;
