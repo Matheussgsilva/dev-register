@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.div`
     display: flex;
-    height: 200px;
+    height: 45px;
     padding: 30px 120px 0px;
 
     @media (max-width: 500px) {
@@ -93,9 +93,4 @@ export const HeaderSearchImage = styled.div`
     width: 35px;
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
-
-    @media (max-width: 500px) {
-        height: 25px;
-        width: 25px;
-    }
 `;
