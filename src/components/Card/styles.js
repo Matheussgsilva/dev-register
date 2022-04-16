@@ -7,7 +7,7 @@ export const Container = styled.div`
 
     @media (max-width: 500px) {
         width: 200px;
-        height: 300px;
+        height: 350px;
         margin-right: 30px;
         margin-top: 20px;
     }
@@ -116,7 +116,7 @@ export const Btn = styled.div`
     }
 
     @media (max-width: 500px) {
-        width: 80px;
+        width: 85px;
         height: 35px;
         font-size: 15px;
     }
