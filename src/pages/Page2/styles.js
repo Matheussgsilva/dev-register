@@ -29,7 +29,7 @@ export const Btn = styled.div`
     @media (max-width: 500px) {
         text-align: center;
         margin: 0px;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 `;
 
