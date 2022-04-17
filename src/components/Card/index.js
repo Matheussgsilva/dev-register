@@ -23,9 +23,7 @@ export const Card = ({ item, onVisible, handleUser, onEdit }) => {
             </C.Card>
             <C.BtnArea>
                 <C.Btn color='warning' onClick={() => handleUser(item, onEdit())} >Editar</C.Btn>
-                <C.Btn
-                    onClick={() => handleUser(item, onVisible())}
-                >Deletar</C.Btn>
+                <C.Btn onClick={() => handleUser(item, onVisible())}>Deletar</C.Btn>
             </C.BtnArea>
         </C.Container>
     );

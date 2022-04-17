@@ -48,7 +48,7 @@ export const Card = styled.div`
 
     @media (max-width: 500px) {
         width: 200px;
-        height: 230px;
+        height: 260px;
         padding-top: 20px;
 
         img {
@@ -116,7 +116,7 @@ export const Btn = styled.div`
     }
 
     @media (max-width: 500px) {
-        width: 85px;
+        width: 86px;
         height: 35px;
         font-size: 15px;
     }

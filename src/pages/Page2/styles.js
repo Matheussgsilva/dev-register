@@ -48,6 +48,7 @@ export const DevArea = styled.div`
 
     @media (max-width: 500px) {
         margin-top: 20px;
+        justify-content: ${props => props.justify.length = 1 ? 'center' : 'none'};
     }
 `;
 
