@@ -48,7 +48,7 @@ export const DevArea = styled.div`
 
     @media (max-width: 500px) {
         margin-top: 20px;
-        justify-content: none;
+        justify-content: flex-start;
     }
 `;
 
