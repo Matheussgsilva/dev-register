@@ -31,6 +31,16 @@ export const DeleteArea = styled.div`
         margin: 0;
         margin-bottom: 20px;
     }
+
+    @media (max-width: 500px) {
+        width: 350px;
+        padding: 20px;
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
 `;
 
 export const BtnArea = styled.div`
@@ -53,5 +63,11 @@ export const Btn = styled.button`
 
     &:hover {
         opacity: 0.8;
+    }
+
+    @media (max-width: 500px) {
+        width: 100px;
+        height: 35px;
+        font-size: 16px;
     }
 `;
