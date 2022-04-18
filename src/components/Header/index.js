@@ -2,8 +2,8 @@ import * as C from './styles'
 import { useState } from 'react';
 
 import linkedinIcon from '../../images/linkedin.png';
-import facebokIcon from '../../images/facebook.png';
-import discordIcon from '../../images/discord.png';
+import githubIcon from '../../images/github-header.png';
+import siteIcon from '../../images/web.png';
 import logo from '../../images/Logo.png';
 import searchIcon from '../../images/loupe.png';
 
@@ -18,10 +18,10 @@ export const Header = ({ display, devName, onSearch }) => {
                         <img src={linkedinIcon} alt='Logo Linkedin' />
                     </a>
                     <a href='https://github.com/matheussgsilva' target='_blank' rel='noreferrer'>
-                        <img src={facebokIcon} alt='Logo Facebook' />
+                        <img src={githubIcon} alt='Logo Facebook' />
                     </a>
                     <a href='https://matheussilva.dev.br' target='_blank' rel='noreferrer'>
-                        <img src={discordIcon} alt='Logo Discord' />
+                        <img src={siteIcon} alt='Logo Discord' />
                     </a>
                 </C.HeaderIcon>
                 <C.HeaderLogo>

@@ -20,8 +20,8 @@ export const HeaderIcon = styled.div`
     width: 280px;
     
     img {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
         margin-right: 20px;
     }
@@ -95,4 +95,9 @@ export const HeaderSearchImage = styled.div`
     width: 35px;
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
+
+    img {
+        height: 25px;
+        width: 25px;
+    }
 `;
