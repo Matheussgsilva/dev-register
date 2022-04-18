@@ -28,6 +28,17 @@ export const Form = styled.div`
         margin-bottom: 20px;
         text-align: center;
     }
+
+    @media (max-width: 500px) {
+        width: 350px;
+        height: 490px;
+        padding: 20px;
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
 `;
 
 export const Label = styled.label`
@@ -53,6 +64,10 @@ export const BtnArea = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+
+    @media (max-width: 500px) {
+        margin-top: 20px;
+    }
 `;
 
 export const Btn = styled.button`
@@ -70,5 +85,12 @@ export const Btn = styled.button`
 
     &:hover {
         opacity: 0.8;
+    }
+
+    @media (max-width: 500px) {
+        width: 120px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 20px;
     }
 `;
