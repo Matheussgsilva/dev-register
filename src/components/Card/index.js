@@ -2,13 +2,17 @@ import * as C from './styles';
 
 import github from '../../images/github.png';
 import linkedin from '../../images/linkedin-logo.png';
+import developerIcon from '../../images/developer.png';
 
 export const Card = ({ item, onVisible, handleUser, onEdit }) => {
     
     return (
         <C.Container>
             <C.Card>
-                <img src={`https://github.com/${item.github}.png`} alt="Foto de perfil do Github" />
+                {item.github === '' && 
+                <img src={developerIcon} alt="Foto de perfil do Github" />}
+                {item.github !== '' && 
+                <img src={`https://github.com/${item.github}.png`} alt="Foto de perfil do Github" />}
                 <hr></hr>
                 <h2>{item.name}</h2>
                 <span>{item.position}</span>

@@ -101,7 +101,7 @@ export const BtnArea = styled.div`
 `;
 
 export const Btn = styled.div`
-    width: 120px;
+    width: 130px;
     height: 40px;
     display: flex;
     justify-content: center;
