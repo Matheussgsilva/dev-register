@@ -8,7 +8,8 @@ import { EditScreen } from '../../components/EditScreen';
 import { DeleteScreen } from '../../components/DeleteScreen';
 
 import { dev } from '../../data/dev';
-import chevron from '../../images/chevron.png'
+import chevron from '../../images/chevron.png';
+import developerIcon from '../../images/developer.png';
 
 export const Page2 = () => {
     const [addVisible, setAddVisible] = useState(false);
@@ -132,21 +133,29 @@ export const Page2 = () => {
                         handleUser={user => setUser(user)}
                     />
                 ))}
-                {showDev === 'search' && 
-                    listDev.filter(item => (item.name.includes(devSearch))).map(( item, index ) => (
-                    <Card  
-                        key={index} 
-                        item={item} 
-                        onVisible={handleVisibleDelete}
-                        onEdit={handleEdit}
-                        handleUser={user => setUser(user)}
-                    /> 
-                ))}
+                <C.FilteredCard>
+                    {showDev === 'search' &&                     
+                        listDev.filter(item => (item.name.includes(devSearch))).map(( item, index ) => (                        
+                        <Card  
+                            key={index} 
+                            item={item} 
+                            onVisible={handleVisibleDelete}
+                            onEdit={handleEdit}
+                            handleUser={user => setUser(user)}
+                        />                     
+                    ))}
+                </C.FilteredCard>
                 {showDev === 'search' && listDev.filter(item => (item.name.includes(devSearch))).length === 0 &&
-                    <h1>Dev não encontrado</h1>
+                    <C.MesageArea>
+                        <img src={developerIcon} alt="Ícone de pessoa"/>
+                        <h1>Dev não encontrado</h1>
+                    </C.MesageArea>
                 }  
-                {listDev.length === 0 &&
-                    <h1>Não há Devs cadastrados</h1>
+                {showDev === 'full' && listDev.length === 0 &&
+                    <C.MesageArea>
+                        <img src={developerIcon} alt="Ícone de pessoa"/>
+                        <h1>Não há Devs cadastrados</h1>
+                    </C.MesageArea>
                 }
             </C.DevArea>
             {listDev.length > 3 &&

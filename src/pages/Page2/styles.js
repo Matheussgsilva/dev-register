@@ -38,7 +38,7 @@ export const DevArea = styled.div`
     height: 450px;
     margin: auto;
     display: flex;
-    justify-content: ${props => props.justify.length < 4 ? 'center' : 'none'};
+    justify-content: ${props => props.justify.length < 4 ? 'center' : 'flex-start'};
     overflow-x: auto;
     scroll-behavier: smooth;
 
@@ -65,4 +65,21 @@ export const ArrowArea = styled.div`
             transform: rotate(180deg);
         }
     }
+`;
+
+export const MesageArea = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 60px;
+        height:60px;
+        margin-right: 20px;
+    }
+`;
+
+export const FilteredCard = styled.div`
+    display: flex;
+    justify-content: center;
 `;
