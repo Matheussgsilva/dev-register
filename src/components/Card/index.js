@@ -17,12 +17,16 @@ export const Card = ({ item, onVisible, handleUser, onEdit }) => {
                 <h2>{item.name}</h2>
                 <span>{item.position}</span>
                 <C.Icon>
-                    <a href={`https://github.com/${item.github}`} target='_blank' rel='noreferrer'>
-                        <img src={github} alt="Github logo" />
-                    </a>
-                    <a href={`https://linkedin.com/in/${item.linkedin}`} target='_blank' rel='noreferrer'>
-                    <img src={linkedin} alt="Linkedin logo" />
-                    </a>
+                    {item.github !== '' && 
+                        <a href={`https://github.com/${item.github}`} target='_blank' rel='noreferrer'>
+                            <img src={github} alt="Github logo" />
+                        </a>
+                    }
+                    {item.linkedin !== '' &&
+                        <a href={`https://linkedin.com/in/${item.linkedin}`} target='_blank' rel='noreferrer'>
+                            <img src={linkedin} alt="Linkedin logo" />
+                        </a>
+                    }
                 </C.Icon>
             </C.Card>
             <C.BtnArea>
