@@ -31,7 +31,7 @@ export const Form = styled.div`
 
     @media (max-width: 500px) {
         width: 350px;
-        height: 500px;
+        height: 490px;
         padding: 20px;
 
         h3 {
@@ -88,8 +88,9 @@ export const Btn = styled.button`
     }
 
     @media (max-width: 500px) {
-        width: 100px;
+        width: 120px;
         height: 35px;
         font-size: 16px;
+        margin-top: 20px;
     }
 `;
