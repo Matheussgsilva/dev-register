@@ -9,7 +9,6 @@ export const DeleteScreen = ({ onHidden, deleteUser, devList, user }) => {
     useEffect (() => {
             let newList = listDev.filter(item => (item.name !== user));
             setListDev(newList);
-            console.log(newList)
     }, [])
     
     return (
