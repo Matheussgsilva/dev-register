@@ -89,4 +89,4 @@ Abaixo segue estrutura das pastas:
 ---
 
 
-<p>Feito com <span>&#xe87d</span> <a href="https://www.linkedin.com/in/matheus-sgsilva/" target="_blank" rel="noopener noreferrer" >Matheus Silva</a></p>
+<p>Feito com ❤️ por <a href="https://www.linkedin.com/in/matheus-sgsilva/" target="_blank" rel="noopener noreferrer" >Matheus Silva</a></p>
