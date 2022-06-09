@@ -5,6 +5,9 @@
 <br>
 
 <h1 align='center'><a href="http://matheussilva.dev.br/" target="_blank" rel="noopener noreferrer" title="Veja o Portfolio">Cadastro Devs</a></h1>
+<p align="center">
+<img src="https://i.postimg.cc/ZKfJSrqR/project-print.jpg" alt="Cadastro de Devs" width="700" height=""/>
+</p>
 
 <p align="center">
  <a href="#-sobre">Sobre</a> •
@@ -23,9 +26,6 @@
 
 ## 💻 Sobre
 
-<p align="center">
-<img src="https://i.postimg.cc/ZKfJSrqR/project-print.jpg" alt="Cadastro de Devs" width="700" height=""/>
-</p>
 Este projeto é uma SPA (Single Page Aplication) que tem como objetivo simular uma página de registro de desenvolvedores.
 
 ---
@@ -89,4 +89,4 @@ Abaixo segue estrutura das pastas:
 ---
 
 
-<p>Feito com <span>&#e87d</span> [Matheus Silva](https://www.linkedin.com/in/matheus-sgsilva/)</p>
+<p>Feito com <span>&#xe87d</span> <a href="https://www.linkedin.com/in/matheus-sgsilva/" target="_blank" rel="noopener noreferrer" >Matheus Silva</a></p>
